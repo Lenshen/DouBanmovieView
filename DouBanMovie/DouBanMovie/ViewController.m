@@ -9,11 +9,9 @@
 #import "ViewController.h"
 #import "DouBanTableViewCell.h"
 
-@interface ViewController ()
+@interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 //添加了一个tabview属性
-@property (weak, nonatomic) IBOutlet UITableView *tabView;
-
-
+@property (strong, nonatomic)UITableView *tabView;
 
 @end
 
@@ -24,10 +22,40 @@
     // Do any additional setup after loading the view, typically from a nib.
     
     //注册了个cell
-    UINib *nib = [UINib nibWithNibName:@"DouBanTableViewCell.h" bundle:nil];
-    [self.tabView registerNib:nib forCellReuseIdentifier:@"DouBanTableViewCell.h"];
+    
+    self.tabView = [[UITableView alloc]initWithFrame:self.view.bounds];
+    [self.view addSubview: _tabView];
+    UINib *nib = [UINib nibWithNibName:@"DouBanTableViewCell" bundle:nil];
+    [self.tabView registerNib:nib forCellReuseIdentifier:@"DouBanTableViewCell"];
+    self.tabView.delegate = self;
+    self.tabView.dataSource = self;
+    self.tabView.rowHeight = 148;
     
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+{
+    return 20;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
+
+{
+    DouBanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DouBanTableViewCell" forIndexPath:indexPath];
+    cell.cellImage.image = [UIImage imageNamed:@"yuan"];
+    cell.nameLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.nameLabel.numberOfLines = 0;
+    [cell.nameLabel sizeToFit];
+    cell.descritionLabel.lineBreakMode = NSLineBreakByWordWrapping;
+    cell.descritionLabel.numberOfLines = 0;
+    [cell.descritionLabel sizeToFit];
+    
+
+  
+    
+    return cell;
+}
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
