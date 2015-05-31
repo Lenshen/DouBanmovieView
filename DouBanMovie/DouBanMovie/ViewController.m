@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "DouBanTableViewCell.h"
+#import "DatailViewController.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 //添加了一个tabview属性
@@ -25,12 +26,13 @@
     
     self.tabView = [[UITableView alloc]initWithFrame:self.view.bounds];
     [self.view addSubview: _tabView];
+    self.tabView.dataSource = self;
+    
+    self.tabView.delegate = self;
+    self.tabView.rowHeight = 148;
     UINib *nib = [UINib nibWithNibName:@"DouBanTableViewCell" bundle:nil];
     [self.tabView registerNib:nib forCellReuseIdentifier:@"DouBanTableViewCell"];
-    self.tabView.delegate = self;
-    self.tabView.dataSource = self;
-    self.tabView.rowHeight = 148;
-    
+   
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
@@ -48,11 +50,12 @@
     cell.descritionLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.descritionLabel.numberOfLines = 0;
     [cell.descritionLabel sizeToFit];
+   return cell;
+}
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    DatailViewController *datail = [[DatailViewController alloc]init];
+    [self.navigationController pushViewController:datail animated:YES];
     
-
-  
-    
-    return cell;
 }
 
 

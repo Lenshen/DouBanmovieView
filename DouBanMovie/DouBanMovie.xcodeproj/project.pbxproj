@@ -11,6 +11,8 @@
 		511875041B1B0B2E000806F7 /* DouBanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 511875021B1B0B2E000806F7 /* DouBanTableViewCell.m */; };
 		511875051B1B0B2E000806F7 /* DouBanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 511875031B1B0B2E000806F7 /* DouBanTableViewCell.xib */; };
 		511875071B1B1104000806F7 /* yuan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 511875061B1B1104000806F7 /* yuan@2x.png */; };
+		5118750E1B1B2449000806F7 /* DatailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5118750C1B1B2449000806F7 /* DatailViewController.m */; };
+		5118750F1B1B2449000806F7 /* DatailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5118750D1B1B2449000806F7 /* DatailViewController.xib */; };
 		5175AF1E1B1AE9D50093B7B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5175AF1D1B1AE9D50093B7B2 /* main.m */; };
 		5175AF211B1AE9D50093B7B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5175AF201B1AE9D50093B7B2 /* AppDelegate.m */; };
 		5175AF241B1AE9D50093B7B2 /* DouBanMovie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5175AF221B1AE9D50093B7B2 /* DouBanMovie.xcdatamodeld */; };
@@ -36,6 +38,9 @@
 		511875021B1B0B2E000806F7 /* DouBanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouBanTableViewCell.m; sourceTree = "<group>"; };
 		511875031B1B0B2E000806F7 /* DouBanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DouBanTableViewCell.xib; sourceTree = "<group>"; };
 		511875061B1B1104000806F7 /* yuan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yuan@2x.png"; sourceTree = "<group>"; };
+		5118750B1B1B2449000806F7 /* DatailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatailViewController.h; sourceTree = "<group>"; };
+		5118750C1B1B2449000806F7 /* DatailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatailViewController.m; sourceTree = "<group>"; };
+		5118750D1B1B2449000806F7 /* DatailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatailViewController.xib; sourceTree = "<group>"; };
 		5175AF181B1AE9D50093B7B2 /* DouBanMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouBanMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5175AF1C1B1AE9D50093B7B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5175AF1D1B1AE9D50093B7B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -113,6 +118,9 @@
 				5175AF201B1AE9D50093B7B2 /* AppDelegate.m */,
 				5175AF251B1AE9D50093B7B2 /* ViewController.h */,
 				5175AF261B1AE9D50093B7B2 /* ViewController.m */,
+				5118750B1B1B2449000806F7 /* DatailViewController.h */,
+				5118750C1B1B2449000806F7 /* DatailViewController.m */,
+				5118750D1B1B2449000806F7 /* DatailViewController.xib */,
 				5175AF281B1AE9D50093B7B2 /* Main.storyboard */,
 				5175AF2B1B1AE9D50093B7B2 /* Images.xcassets */,
 				5175AF2D1B1AE9D50093B7B2 /* LaunchScreen.xib */,
@@ -252,6 +260,7 @@
 				5175AF2A1B1AE9D50093B7B2 /* Main.storyboard in Resources */,
 				5175AF2F1B1AE9D50093B7B2 /* LaunchScreen.xib in Resources */,
 				5175AF2C1B1AE9D50093B7B2 /* Images.xcassets in Resources */,
+				5118750F1B1B2449000806F7 /* DatailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +316,7 @@
 				511875041B1B0B2E000806F7 /* DouBanTableViewCell.m in Sources */,
 				5175AF271B1AE9D50093B7B2 /* ViewController.m in Sources */,
 				5175AF1E1B1AE9D50093B7B2 /* main.m in Sources */,
+				5118750E1B1B2449000806F7 /* DatailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
