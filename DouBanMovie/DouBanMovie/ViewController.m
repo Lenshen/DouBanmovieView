@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+//添加了一个tabview属性
 @property (weak, nonatomic) IBOutlet UITableView *tabView;
 
 
