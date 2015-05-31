@@ -7,10 +7,12 @@
 //
 
 #import "ViewController.h"
+#import "DouBanTableViewCell.h"
 
 @interface ViewController ()
 //添加了一个tabview属性
 @property (weak, nonatomic) IBOutlet UITableView *tabView;
+
 
 
 @end
@@ -20,6 +22,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    //注册了个cell
+    UINib *nib = [UINib nibWithNibName:@"DouBanTableViewCell.h" bundle:nil];
+    [self.tabView registerNib:nib forCellReuseIdentifier:@"DouBanTableViewCell.h"];
+    
 }
 
 - (void)didReceiveMemoryWarning {
