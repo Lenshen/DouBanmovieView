@@ -1,37 +1,24 @@
 //
-//  DatailViewController.m
+//  ImageViewController.m
 //  DouBanMovie
 //
-//  Created by 鲍先生 on 15/5/31.
+//  Created by 鲍先生 on 15/6/1.
 //  Copyright (c) 2015年 鲍先生. All rights reserved.
 //
 
-#import "DatailViewController.h"
-#import "DouBanClass.h"
 #import "ImageViewController.h"
 
-@interface DatailViewController ()
+@interface ImageViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @end
 
-@implementation DatailViewController
-- (IBAction)addViewBotto:(UIButton *)sender
-{
-    ImageViewController *image = [[ImageViewController alloc]init];
-    [self.navigationController pushViewController:image animated:YES];
-    
-    
-}
+@implementation ImageViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.detialImage.image = [UIImage imageNamed:@"yuan"];
-    
-    DouBanClass *douban = self.douban;
-    
-
-    
+    self.image.image = [UIImage imageNamed:@"yuan"];
 }
 
 - (void)didReceiveMemoryWarning {

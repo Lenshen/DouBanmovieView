@@ -30,6 +30,10 @@
     
     self.tabView.delegate = self;
     self.tabView.rowHeight = 148;
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+//    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.tintColor = [UIColor greenColor];
+    
     self.navigationItem.title = @"豆瓣最新电影";
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(lookAll)];
     self.navigationItem.rightBarButtonItem = rightButton;
@@ -57,7 +61,14 @@
 
 {
     DouBanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DouBanTableViewCell" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1];
+    
+    
+    cell.backgroundColor = [UIColor greenColor];
+    UIImageView *backgroundImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shen.jpg"]];
+    backgroundImage.alpha = 1;
+    cell.backgroundView = backgroundImage;
+
+
     cell.cellImage.image = [UIImage imageNamed:@"yuan"];
     cell.nameLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.nameLabel.numberOfLines = 0;

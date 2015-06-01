@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#include "DouBanClass.h"
 
 @interface DatailViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UIButton *viewButton;
 @property (weak, nonatomic) IBOutlet UIImageView *detialImage;
+@property (weak, nonatomic) DouBanClass *douban;
 
 @end
