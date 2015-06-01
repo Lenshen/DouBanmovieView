@@ -30,19 +30,34 @@
     
     self.tabView.delegate = self;
     self.tabView.rowHeight = 148;
+    self.navigationItem.title = @"豆瓣最新电影";
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(lookAll)];
+    self.navigationItem.rightBarButtonItem = rightButton;
+
     UINib *nib = [UINib nibWithNibName:@"DouBanTableViewCell" bundle:nil];
     [self.tabView registerNib:nib forCellReuseIdentifier:@"DouBanTableViewCell"];
    
 }
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section;
+-(void)lookAll
 {
-    return 20;
+    DatailViewController *datail = [[DatailViewController alloc]init];
+    [self.navigationController pushViewController:datail animated:YES];
+    
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
+{
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return 4;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
 {
     DouBanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DouBanTableViewCell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:0.5 green:0.5 blue:0.5 alpha:1];
     cell.cellImage.image = [UIImage imageNamed:@"yuan"];
     cell.nameLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.nameLabel.numberOfLines = 0;

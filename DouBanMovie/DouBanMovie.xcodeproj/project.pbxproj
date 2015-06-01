@@ -10,9 +10,10 @@
 		4F0C7E0097655FFA4BD61ABF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AD4B03B0B50CF8DB438AD870 /* libPods.a */; };
 		511875041B1B0B2E000806F7 /* DouBanTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 511875021B1B0B2E000806F7 /* DouBanTableViewCell.m */; };
 		511875051B1B0B2E000806F7 /* DouBanTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 511875031B1B0B2E000806F7 /* DouBanTableViewCell.xib */; };
-		511875071B1B1104000806F7 /* yuan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 511875061B1B1104000806F7 /* yuan@2x.png */; };
 		5118750E1B1B2449000806F7 /* DatailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5118750C1B1B2449000806F7 /* DatailViewController.m */; };
 		5118750F1B1B2449000806F7 /* DatailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5118750D1B1B2449000806F7 /* DatailViewController.xib */; };
+		513EFCD71B1C11A2009A6228 /* DouBanClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 513EFCD61B1C11A2009A6228 /* DouBanClass.m */; };
+		513EFCD91B1C144F009A6228 /* yuan@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 513EFCD81B1C144F009A6228 /* yuan@2x.png */; };
 		5175AF1E1B1AE9D50093B7B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5175AF1D1B1AE9D50093B7B2 /* main.m */; };
 		5175AF211B1AE9D50093B7B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5175AF201B1AE9D50093B7B2 /* AppDelegate.m */; };
 		5175AF241B1AE9D50093B7B2 /* DouBanMovie.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5175AF221B1AE9D50093B7B2 /* DouBanMovie.xcdatamodeld */; };
@@ -37,10 +38,12 @@
 		511875011B1B0B2E000806F7 /* DouBanTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouBanTableViewCell.h; sourceTree = "<group>"; };
 		511875021B1B0B2E000806F7 /* DouBanTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouBanTableViewCell.m; sourceTree = "<group>"; };
 		511875031B1B0B2E000806F7 /* DouBanTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DouBanTableViewCell.xib; sourceTree = "<group>"; };
-		511875061B1B1104000806F7 /* yuan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yuan@2x.png"; sourceTree = "<group>"; };
 		5118750B1B1B2449000806F7 /* DatailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatailViewController.h; sourceTree = "<group>"; };
 		5118750C1B1B2449000806F7 /* DatailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatailViewController.m; sourceTree = "<group>"; };
 		5118750D1B1B2449000806F7 /* DatailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatailViewController.xib; sourceTree = "<group>"; };
+		513EFCD51B1C11A2009A6228 /* DouBanClass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DouBanClass.h; sourceTree = "<group>"; };
+		513EFCD61B1C11A2009A6228 /* DouBanClass.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DouBanClass.m; sourceTree = "<group>"; };
+		513EFCD81B1C144F009A6228 /* yuan@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yuan@2x.png"; sourceTree = "<group>"; };
 		5175AF181B1AE9D50093B7B2 /* DouBanMovie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DouBanMovie.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5175AF1C1B1AE9D50093B7B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5175AF1D1B1AE9D50093B7B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -82,6 +85,8 @@
 		511874FD1B1B0A73000806F7 /* mode */ = {
 			isa = PBXGroup;
 			children = (
+				513EFCD51B1C11A2009A6228 /* DouBanClass.h */,
+				513EFCD61B1C11A2009A6228 /* DouBanClass.m */,
 				511875011B1B0B2E000806F7 /* DouBanTableViewCell.h */,
 				511875021B1B0B2E000806F7 /* DouBanTableViewCell.m */,
 				511875031B1B0B2E000806F7 /* DouBanTableViewCell.xib */,
@@ -112,7 +117,7 @@
 		5175AF1A1B1AE9D50093B7B2 /* DouBanMovie */ = {
 			isa = PBXGroup;
 			children = (
-				511875061B1B1104000806F7 /* yuan@2x.png */,
+				513EFCD81B1C144F009A6228 /* yuan@2x.png */,
 				511874FD1B1B0A73000806F7 /* mode */,
 				5175AF1F1B1AE9D50093B7B2 /* AppDelegate.h */,
 				5175AF201B1AE9D50093B7B2 /* AppDelegate.m */,
@@ -255,11 +260,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				511875071B1B1104000806F7 /* yuan@2x.png in Resources */,
 				511875051B1B0B2E000806F7 /* DouBanTableViewCell.xib in Resources */,
 				5175AF2A1B1AE9D50093B7B2 /* Main.storyboard in Resources */,
 				5175AF2F1B1AE9D50093B7B2 /* LaunchScreen.xib in Resources */,
 				5175AF2C1B1AE9D50093B7B2 /* Images.xcassets in Resources */,
+				513EFCD91B1C144F009A6228 /* yuan@2x.png in Resources */,
 				5118750F1B1B2449000806F7 /* DatailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				513EFCD71B1C11A2009A6228 /* DouBanClass.m in Sources */,
 				5175AF241B1AE9D50093B7B2 /* DouBanMovie.xcdatamodeld in Sources */,
 				5175AF211B1AE9D50093B7B2 /* AppDelegate.m in Sources */,
 				511875041B1B0B2E000806F7 /* DouBanTableViewCell.m in Sources */,
