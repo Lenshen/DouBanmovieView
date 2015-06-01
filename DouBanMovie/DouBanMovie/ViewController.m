@@ -63,13 +63,19 @@
     DouBanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DouBanTableViewCell" forIndexPath:indexPath];
     
     
+    //背景图片颜色
     cell.backgroundColor = [UIColor greenColor];
     UIImageView *backgroundImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shen.jpg"]];
     backgroundImage.alpha = 1;
     cell.backgroundView = backgroundImage;
-
-
+    
+        
+    
     cell.cellImage.image = [UIImage imageNamed:@"yuan"];
+    //图片设置边框有弧度
+    cell.cellImage.layer.cornerRadius = 20;
+    cell.cellImage.layer.masksToBounds = YES;
+    
     cell.nameLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.nameLabel.numberOfLines = 0;
     [cell.nameLabel sizeToFit];

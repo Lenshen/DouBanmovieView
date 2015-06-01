@@ -27,6 +27,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     self.detialImage.image = [UIImage imageNamed:@"yuan"];
+    self.detialImage.layer.cornerRadius = 20;
+    self.detialImage.layer.masksToBounds = YES;
+    
     
     DouBanClass *douban = self.douban;
     
