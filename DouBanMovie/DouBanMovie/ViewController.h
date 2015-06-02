@@ -7,8 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class DouBanClass;
 @interface ViewController : UIViewController
+@property (nonatomic , strong)NSArray *json;
+
 
 
 @end

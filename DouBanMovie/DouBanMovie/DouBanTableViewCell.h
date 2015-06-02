@@ -10,6 +10,7 @@
 
 @interface DouBanTableViewCell : UITableViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *cellImage;
+@property (weak, nonatomic) IBOutlet UILabel *movieScoreLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *descritionLabel;

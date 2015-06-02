@@ -10,6 +10,13 @@
 #import <UIKit/UIKit.h>
 
 @interface DouBanClass : NSObject
-@property (nonatomic , strong)UIImage *cellImage;
+@property (nonatomic , strong)UIImage *movieImage;
+@property (nonatomic , strong)NSString *movieName;
+@property (nonatomic , strong)NSString *postPath;
+@property (nonatomic , assign)float movieScore;
+@property (nonatomic , strong)NSString *movieDescrition;
+@property (nonatomic , strong)NSDate *movieDate;
+-(instancetype)initWithDictionary : (NSDictionary *)dict;
+
 
 @end

@@ -8,16 +8,21 @@
 
 #import "DatailViewController.h"
 #import "DouBanClass.h"
-#import "ImageViewController.h"
+#import "ImageViewController.h"'
+#import "ViewController.h"
 
 @interface DatailViewController ()
+@property (nonatomic , assign)int index;
 
 @end
 
 @implementation DatailViewController
 - (IBAction)addViewBotto:(UIButton *)sender
 {
+    _index++;
     ImageViewController *image = [[ImageViewController alloc]init];
+    ViewController *view = [[ViewController alloc]init];
+    image.douban = view.json[_index];
     [self.navigationController pushViewController:image animated:YES];
     
     
@@ -26,12 +31,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.detialImage.image = [UIImage imageNamed:@"yuan"];
+    DouBanClass *douban = self.douban;
+    
+    self.backgroundView.image =  [UIImage imageNamed:@"b.jpg"];
+    
+    self.detialImage.image = douban.movieImage;
     self.detialImage.layer.cornerRadius = 20;
     self.detialImage.layer.masksToBounds = YES;
     
-    
-    DouBanClass *douban = self.douban;
     
 
     

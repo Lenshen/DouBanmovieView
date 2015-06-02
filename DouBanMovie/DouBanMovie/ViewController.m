@@ -9,10 +9,13 @@
 #import "ViewController.h"
 #import "DouBanTableViewCell.h"
 #import "DatailViewController.h"
+#import "AFNetworking.h"
+#import "DouBanClass.h"
 
 @interface ViewController ()<UITableViewDataSource,UITableViewDelegate>
 //添加了一个tabview属性
 @property (strong, nonatomic)UITableView *tabView;
+
 
 @end
 
@@ -30,24 +33,58 @@
     
     self.tabView.delegate = self;
     self.tabView.rowHeight = 148;
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-//    self.navigationController.navigationBar.translucent = YES;
-    self.navigationController.navigationBar.tintColor = [UIColor greenColor];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.barTintColor = [UIColor colorWithRed:0.91 green:0.08 blue:0.52 alpha:0.0];
     
     self.navigationItem.title = @"豆瓣最新电影";
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(lookAll)];
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]initWithBarButtonSystemItem:UIBarButtonSystemItemBookmarks target:self action:@selector(viewlook)];
     self.navigationItem.rightBarButtonItem = rightButton;
 
     UINib *nib = [UINib nibWithNibName:@"DouBanTableViewCell" bundle:nil];
     [self.tabView registerNib:nib forCellReuseIdentifier:@"DouBanTableViewCell"];
-   
+    [self loadReview];
+
+    
+  
 }
--(void)lookAll
+-(void)viewlook
 {
     DatailViewController *datail = [[DatailViewController alloc]init];
     [self.navigationController pushViewController:datail animated:YES];
     
 }
+-(void) loadReview
+{
+    self.json = [[NSArray alloc]init];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSString *getURL = @"http://api.themoviedb.org/3/movie/now_playing?api_key=e55425032d3d0f371fc776f302e7c09b";
+    
+    [manager GET:getURL parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject)
+     {
+         if (responseObject)
+         {
+             NSArray *objectsFromResponse = responseObject[@"results"];
+             NSMutableArray *arrayM = [[NSMutableArray alloc]init];
+             for (int i = 0; i < [responseObject count]; i++)
+             {
+                 NSDictionary *dic= [[NSDictionary alloc]init];
+                dic = objectsFromResponse[i];
+                 DouBanClass *douban = [[DouBanClass alloc]initWithDictionary:dic];
+                 [arrayM addObject:douban];
+                 
+             }
+             self.json = [arrayM copy];
+             [self.tabView reloadData];
+
+             
+             NSLog(@"%@",objectsFromResponse);
+         }
+     } failure:^(AFHTTPRequestOperation *operation, NSError *error)
+     {
+         NSLog(@"%@  %@",operation,error);
+     }];
+}
+
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -55,7 +92,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return self.json.count;
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath;
 
@@ -64,14 +101,22 @@
     
     
     //背景图片颜色
-    cell.backgroundColor = [UIColor greenColor];
-    UIImageView *backgroundImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"shen.jpg"]];
+    UIImageView *backgroundImage = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"lin.jpg"]];
     backgroundImage.alpha = 1;
     cell.backgroundView = backgroundImage;
+//    
+    DouBanClass *douban = self.json[indexPath.row];
+    cell.nameLabel.text = douban.movieName;
+    [cell.nameLabel sizeToFit];
+    cell.timeLabel.text = [NSString stringWithFormat:@"%@",douban.movieDate ];
+    cell.movieScoreLabel.text = [NSString stringWithFormat:@"%.1f",douban.movieScore];
     
-        
+    cell.cellImage.image = douban.movieImage;
+
     
-    cell.cellImage.image = [UIImage imageNamed:@"yuan"];
+    
+    
+    
     //图片设置边框有弧度
     cell.cellImage.layer.cornerRadius = 20;
     cell.cellImage.layer.masksToBounds = YES;
@@ -86,6 +131,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     DatailViewController *datail = [[DatailViewController alloc]init];
+    datail.douban = self.json[indexPath.row];
     [self.navigationController pushViewController:datail animated:YES];
     
 }

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+@class DouBanClass;
 @interface ImageViewController : UIViewController
-
+@property (nonatomic,strong)DouBanClass *douban;
 @end
