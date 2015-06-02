@@ -13,7 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *movieScoreLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
-@property (weak, nonatomic) IBOutlet UILabel *descritionLabel;
+
 
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
 

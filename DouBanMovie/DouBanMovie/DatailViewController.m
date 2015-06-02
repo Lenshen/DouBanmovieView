@@ -36,6 +36,15 @@
     self.backgroundView.image =  [UIImage imageNamed:@"b.jpg"];
     
     self.detialImage.image = douban.movieImage;
+    self.movieName.text = douban.movieName;
+    self.movieName.lineBreakMode = NSLineBreakByCharWrapping;
+    self.movieName.numberOfLines = 0;
+    self.descirtionLable.text = douban.movieDescrition;
+    self.descirtionLable.lineBreakMode = NSLineBreakByCharWrapping;
+    self.descirtionLable.numberOfLines = 0;
+    
+    self.moviewTime.text= [NSString stringWithFormat:@"%@",douban.movieDate ];
+    self.moviewScore.text = [NSString stringWithFormat:@"%.1f",douban.movieScore];
     self.detialImage.layer.cornerRadius = 20;
     self.detialImage.layer.masksToBounds = YES;
     

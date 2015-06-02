@@ -69,7 +69,7 @@
              {
                  NSDictionary *dic= [[NSDictionary alloc]init];
                 dic = objectsFromResponse[i];
-                 DouBanClass *douban = [[DouBanClass alloc]initWithDictionary:dic];
+                DouBanClass *douban = [[DouBanClass alloc]initWithDictionary:dic];
                  [arrayM addObject:douban];
                  
              }
@@ -124,9 +124,7 @@
     cell.nameLabel.lineBreakMode = NSLineBreakByWordWrapping;
     cell.nameLabel.numberOfLines = 0;
     [cell.nameLabel sizeToFit];
-    cell.descritionLabel.lineBreakMode = NSLineBreakByWordWrapping;
-    cell.descritionLabel.numberOfLines = 0;
-    [cell.descritionLabel sizeToFit];
+  
    return cell;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
