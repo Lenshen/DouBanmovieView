@@ -12,21 +12,11 @@
 #import "ViewController.h"
 
 @interface DatailViewController ()
-@property (nonatomic , assign)int index;
 
 @end
 
 @implementation DatailViewController
-- (IBAction)addViewBotto:(UIButton *)sender
-{
-    _index++;
-    ImageViewController *image = [[ImageViewController alloc]init];
-    ViewController *view = [[ViewController alloc]init];
-    image.douban = view.json[_index];
-    [self.navigationController pushViewController:image animated:YES];
-    
-    
-}
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,6 +40,16 @@
     
     
 
+    
+}
+- (IBAction)addViewBotto:(UIButton *)sender
+{
+  
+    ImageViewController *image = [[ImageViewController alloc]init];
+    ViewController *v = [[ViewController alloc]init];
+    image.douban = v.json[v.index];
+    [self.navigationController pushViewController:image animated:YES];
+    
     
 }
 

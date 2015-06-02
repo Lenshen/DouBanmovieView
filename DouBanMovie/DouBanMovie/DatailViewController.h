@@ -18,7 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *movieName;
 @property (weak, nonatomic) IBOutlet UIImageView *backgroundView;
 @property (weak, nonatomic) IBOutlet UIButton *viewButton;
-@property (weak, nonatomic) IBOutlet UIImageView *detialImage;
+@property (strong, nonatomic) IBOutlet UIImageView *detialImage;
 @property (weak, nonatomic) IBOutlet UILabel *descirtionLable;
 @property (weak, nonatomic) DouBanClass *douban;
 

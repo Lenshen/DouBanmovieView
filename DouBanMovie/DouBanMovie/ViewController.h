@@ -10,6 +10,7 @@
 @class DouBanClass;
 @interface ViewController : UIViewController
 @property (nonatomic , strong)NSArray *json;
+@property (nonatomic ,assign)NSInteger index;
 
 
 

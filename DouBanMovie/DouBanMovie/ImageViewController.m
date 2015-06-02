@@ -8,9 +8,10 @@
 
 #import "ImageViewController.h"
 #import "DouBanClass.h"
+#import "DatailViewController.h"
+#import "ViewController.h"
 
 @interface ImageViewController ()
-@property (weak, nonatomic) IBOutlet UIImageView *image;
 
 @end
 
@@ -19,8 +20,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+   
     DouBanClass *douban = self.douban;
-    self.image.image = douban.movieImage;
+    
+    
+    
+   self.image.image = douban.movieImage;
+
+   
+ 
 }
 
 - (void)didReceiveMemoryWarning {

@@ -10,4 +10,6 @@
 @class DouBanClass;
 @interface ImageViewController : UIViewController
 @property (nonatomic,strong)DouBanClass *douban;
+@property (weak, nonatomic) IBOutlet UIImageView *image;
+
 @end

@@ -42,6 +42,10 @@
 
     UINib *nib = [UINib nibWithNibName:@"DouBanTableViewCell" bundle:nil];
     [self.tabView registerNib:nib forCellReuseIdentifier:@"DouBanTableViewCell"];
+    self.tabView.separatorStyle = UITableViewCellSeparatorStyleSingleLineEtched;
+    
+  
+
     [self loadReview];
 
     
@@ -65,7 +69,7 @@
          {
              NSArray *objectsFromResponse = responseObject[@"results"];
              NSMutableArray *arrayM = [[NSMutableArray alloc]init];
-             for (int i = 0; i < [responseObject count]; i++)
+             for (int i = 0; i < [objectsFromResponse count]; i++)
              {
                  NSDictionary *dic= [[NSDictionary alloc]init];
                 dic = objectsFromResponse[i];
@@ -98,6 +102,9 @@
 
 {
     DouBanTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"DouBanTableViewCell" forIndexPath:indexPath];
+    cell.layer.cornerRadius = 20;
+    cell.layer.masksToBounds = YES;
+    
     
     
     //背景图片颜色
@@ -130,6 +137,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     DatailViewController *datail = [[DatailViewController alloc]init];
     datail.douban = self.json[indexPath.row];
+  
     [self.navigationController pushViewController:datail animated:YES];
     
 }
